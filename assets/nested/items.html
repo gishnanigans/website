@@ -1,0 +1,28 @@
+---
+layout: master.html
+---
+
+{{{contents}}}
+
+{{#data}}
+<ul>
+  <li>
+    <ul>
+      <li>Item #{{number}}</li>
+      <li>Points: {{points}}</li>
+      <li>Status: {{status}}</li>
+      <ul>
+      {{#if owners}}
+        {{#each owners}}
+          <li>Owner: {{this}}</li>
+        {{/each}}
+      {{else}}
+        <li>Owner: none</li>
+      {{/if}}
+      </ul>
+      <li>Details: {{detail}}</li>
+    </ul>
+  </li>
+</ul>
+{{/data}}
+

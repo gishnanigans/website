@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gishnanigans {{title}}</title>
+<base href="{{base}}" />
+<script src="include/js/header.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="include/css/main.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="include/css/header.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+<body>
+  {{> header}}
+  <section id="content">
+    
+{{{contents}}}
+
+
+{{#each collections.help}}
+  <h3>{{title}}</h3>
+  <article>
+    {{{contents}}}
+  </article>
+{{/each}}
+
+  </section>
+  {{> footer}}
+</body>
+</html>

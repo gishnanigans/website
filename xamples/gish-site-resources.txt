@@ -1,0 +1,55 @@
+
+
+SSL on AWS Lightsail
+
+https://www.wordpresstutorialsadvanced.in/setup-ssl-certificates-amazon-lightsail/#google_vignette
+
+https://forums.aws.amazon.com/thread.jspa?threadID=248275
+
+http://stackoverflow.com/questions/41272860/ssl-tls-certificates-for-lightsail
+
+http://stackoverflow.com/questions/15457562/https-with-nodejs-and-connect
+
+https://github.com/Raynos/http-framework/blob/master/README.md
+
+https://github.com/senchalabs/connect/blob/master/README.md
+
+
+
+File Upload
+
+https://www.npmjs.com/package/fileupload
+
+https://coligo.io/building-ajax-file-uploader-with-node/
+
+https://www.sitepoint.com/html5-javascript-file-upload-progress-bar/
+
+http://codular.com/javascript-ajax-file-upload-with-progress
+
+https://zinoui.com/blog/ajax-request-progress-bar
+
+
+
+Download
+
+http://stackoverflow.com/questions/11620698/how-to-trigger-a-file-download-when-clicking-an-html-button-or-javascript
+
+
+
+Basic Auth
+
+https://github.com/jshttp/basic-auth/blob/master/README.md
+
+https://www.npmjs.com/package/http-auth
+
+
+
+Recursive Lists with Handlebars
+
+http://www.boduch.ca/2014/03/recursive-list-building-with-handlebars.html?m=1
+
+
+
+PM2 on Ubuntu
+
+https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps

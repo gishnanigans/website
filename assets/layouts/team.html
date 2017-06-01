@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gishnanigans {{title}}</title>
+<base href="{{base}}" />
+<script src="include/js/header.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="include/css/main.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="include/css/header.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+<body>
+  {{> header}}
+  <section id="content">
+    
+{{{contents}}}
+
+
+{{#each collections.team}}
+  <h3>{{this.alias}}</h3>
+  {{{this.contents}}}
+  <a href="{{this.url}}">{{this.alias}}</a>
+  
+  {{#each ../collections.items }}
+    {{#ifequals owner ../alias}}
+      <h4>Item {{this.item}}</h4>
+      {{{this.contents}}}
+    {{/ifequals}}
+  {{/each}}
+  
+{{/each}}
+
+
+  </section>
+  {{> footer}}
+</body>
+</html>

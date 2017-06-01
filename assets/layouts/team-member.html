@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gishnanigans {{title}}</title>
+<base href="{{base}}" />
+<script src="include/js/header.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="include/css/main.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="include/css/header.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+<body>
+  {{> header}}
+  <section id="content">
+    
+<h2>{{alias}}</h2>
+
+
+{{{contents}}}
+
+
+{{#each items.items}}
+  {{#ifequals owner ../alias}}
+  <div class="item-frame">
+    <h4>Item {{number}}</h4>
+    <p>Points: {{points}}</p>
+    <p>Status: {{status}}</p>
+    <p>{{{detail}}}</p>
+  </div>
+  {{/ifequals}}
+{{/each}}
+
+
+<div class="links">
+  <a class="home" href="team">Team Page</a>
+  
+  {{#if previous}}
+    <a class="prev" href="{{{previous.url}}}">&larr; {{{previous.alias}}}</a>
+  {{else}}
+    <span>&larr; prev</span>
+  {{/if}}
+  {{#if next}}
+    <a class="next right" href="{{{next.url}}}">{{{next.alias}}} &rarr;</a>
+  {{else}}
+    <span>next &rarr;</span>
+  {{/if}}
+</div>
+
+  </section>
+  {{> footer}}
+</body>
+</html>

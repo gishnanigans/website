@@ -1,0 +1,29 @@
+
+-
+  number: 1
+  points: 32
+  owners: [kevin]
+  status: unclaimed
+  detail: There’s something you used
+-
+  number: 2
+  points: 123
+  owners: [tamia, kevin]
+  status: pending
+  detail: A freight train engine pulling
+-
+  number: 3
+  points: 21
+  owners: []
+  status: unclaimed
+  detail: Someday your face will freeze
+-
+  number: 1
+  points: 1
+  owners: []
+  status: unclaimed
+  detail: foo
+
+
+    # unclaimed,assigned, in-progress, finished, submitted, approved
+

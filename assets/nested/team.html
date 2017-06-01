@@ -1,0 +1,21 @@
+---
+layout: master.html
+---
+
+{{{contents}}}
+
+
+{{#each collections.team}}
+  <h3>{{this.alias}}</h3>
+  {{{this.contents}}}
+  <a href="{{this.url}}">{{this.alias}}</a>
+  
+  {{#each ../collections.items }}
+    {{#ifequals owner ../alias}}
+      <h4>Item {{this.item}}</h4>
+      {{{this.contents}}}
+    {{/ifequals}}
+  {{/each}}
+  
+{{/each}}
+
