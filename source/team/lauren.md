@@ -1,11 +1,12 @@
 ---
-member: 12
-joined: 2017.05.15
 name: Lauren Brown
 alias: Lauren
+user: lauren
+member: 12
+joined: 2017.05.15
 town: Eugene, Oregon, USA
-phone: 
+phone:
 email: laurens539@gmail.com
-layout: team-member.html
+partial: team-member
 ---
 

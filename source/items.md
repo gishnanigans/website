@@ -1,6 +1,6 @@
 ---
 title: The List
-layout: items.html
+partial: items
 data: items.yaml
 ---
 

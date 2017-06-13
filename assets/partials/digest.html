@@ -1,0 +1,13 @@
+
+  {{{contents}}}
+  
+{{#each (lookup collections collection)}}
+{{#ifequals contents ../contents}}
+{{else}}
+  <article>
+    <h3>{{title}}</h3>
+    {{{contents}}}
+  </article>
+  
+{{/ifequals}}
+{{/each}}

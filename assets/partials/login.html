@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Gishnanigans Login</title>
+<title>Gishnanigans {{title}}</title>
 
 <script>
 window.onload = function() {
   var server = window.location.search.slice(1);  // substring(1)
   var status = document.getElementById('status');
-  var login = document.getElementById('username');
+  var login = document.querySelector('input[name=username]');
   
   login.focus();
   
@@ -19,6 +19,9 @@ window.onload = function() {
       break;
     case 'out':
       msg = 'You have been logged out';
+      break;
+    case 'cook':
+      msg = 'This site uses cookies for login security';
       break;
     default:
       msg = '';
@@ -32,6 +35,8 @@ window.onload = function() {
 <style type="text/css">
 
 body {
+  width: 400px;
+  margin: 0 auto;
   padding: 20px;
   font-family: Verdana;
 }
@@ -59,8 +64,9 @@ input[type=submit] {
     {{{contents}}}
     
     <form action="auth" method="post">
-      <label>Username: <input id="username" placeholder="username" type="text"></label>
-      <label>Password: <input id="password" placeholder="password" type="password"></label>
+      <!--  enctype="multipart/form-data" -->
+      <label>Username: <input name="username" placeholder="username" type="text"></label>
+      <label>Password: <input name="password" placeholder="password" type="password"></label>
       <input type="submit" value="Login">
     </form>
     
@@ -68,7 +74,7 @@ input[type=submit] {
   </section>
 
 <footer>
-<small>Copyright © 2017, Team Gishnanigans, All Rights Reserved</small>
+<small>Copyright © 2017, Team Gishnanigans</small>
 </footer>
 </body>
 </html>

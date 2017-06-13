@@ -1,6 +1,7 @@
 ---
 title: Help &amp; FAQ
-layout: help.html
+collection: help
+partial: digest
 ---
 
 Some sticky content

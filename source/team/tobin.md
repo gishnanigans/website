@@ -1,11 +1,12 @@
 ---
-member: 7
-joined: 2017.05.13
 name: Tobin Engen
 alias: Tobin
+user: tobin
+member: 7
+joined: 2017.05.13
 town: Bellingham, Washington, USA
-phone: 
+phone:
 email: tobin@clashcomputing.com
-layout: team-member.html
+partial: team-member
 ---
 

@@ -14,10 +14,14 @@ window.addEventListener('load', event => {
   href = window.location.href;
   base = document.querySelector('base').href;
   path = href.substring(base.length);
+  if (path === '') {
+    href = base + 'home.html';
+  }
+  if (path === '') path = 'home.html';
   links = document.querySelectorAll('a');
   for (var link, i = 0; i < links.length; i ++) {
     link = links.item(i);
-    if (link.href == href || link.href == path) {
+    if (link.href == href) { //  || link.href == path
       link.classList ? link.classList.add('active') : link.className += ' active';
     }
   }

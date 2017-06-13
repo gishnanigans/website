@@ -1,0 +1,101 @@
+
+@small-delta: ~"(max-width: 749px)";
+@large-delta: ~"(min-width: 750px)";
+
+// @background: #C10303; // red
+@background: #FFE600; // yellow
+// @foreground: #FFF;
+@foreground: #C10303; // red
+@gray: #555;
+@slate: rgba(61,61,61,1);
+
+
+// content.css
+// theme.css scheme.css brand.css palette.css
+// reset.css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Raleway, Verdana, sans-serif;
+  font-size: 16px;
+  font-size: 100%;
+  color: @slate;
+}
+
+h1 {
+  
+}
+
+/*** SMALL SCREEN VIEW ***/
+
+@media @small-delta {
+  
+  section {
+    
+  }
+  
+  article {
+    
+  }
+  
+  h3 {
+    
+  }
+  
+}
+
+
+/*** LARGE SCREEN VIEW ***/
+
+@media @large-delta {
+  
+  section,
+  footer {
+    padding: 10px;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  h2 {
+    margin: 12px 0;
+  }
+  
+  article {
+    margin: 12px 0;
+    padding: 8px;
+    border: 1px solid silver;
+    border-radius: 4px;
+  }
+  
+  h3 {
+    margin: 12px 0;
+    color: @gray;
+    font-weight: normal;
+  }
+  
+  h3::before {
+    content: '### ';
+  }
+  
+  p {
+    margin: 12px 0;
+  }
+  
+  footer {
+    padding: 12px;
+  }
+  
+  small {
+    font-size: 14px;
+  }
+  
+}
+

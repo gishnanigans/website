@@ -1,11 +1,12 @@
 ---
-member: 9
-joined: 2016.05.15
 name: Samantha Prince
 alias: Sam
+user: sam
+member: 9
+joined: 2016.05.15
 town: Nova Scotia, Canada
-phone: 
+phone:
 email: s_prince94@hotmail.com
-layout: team-member.html
+partial: team-member
 ---
 

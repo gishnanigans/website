@@ -1,11 +1,12 @@
 ---
-member: 10
-joined: 2017.05.15
 name: Monica Schierbaum
 alias: Monica
+user: monica
+member: 10
+joined: 2017.05.15
 town: Seattle, Washington, USA
-phone: 
+phone:
 email: mmschierbaum@gmail.com
-layout: team-member.html
+partial: team-member
 ---
 

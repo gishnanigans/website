@@ -1,12 +1,7 @@
----
-layout: master.html
----
 
 <h2>{{alias}}</h2>
 
-
 {{{contents}}}
-
 
 {{#each items.items}}
   {{#ifequals owner ../alias}}
@@ -21,15 +16,14 @@ layout: master.html
 
 
 <div class="links">
-  <a class="home" href="team">Team Page</a>
-  
+    <a class="home" href="team.html">Team Page</a>
   {{#if previous}}
-    <a class="prev" href="{{{previous.url}}}">&larr; {{{previous.alias}}}</a>
+    <a class="prev" href="{{{previous.path}}}">&larr; {{{previous.alias}}}</a>
   {{else}}
     <span>&larr; prev</span>
   {{/if}}
   {{#if next}}
-    <a class="next right" href="{{{next.url}}}">{{{next.alias}}} &rarr;</a>
+    <a class="next right" href="{{{next.path}}}">{{{next.alias}}} &rarr;</a>
   {{else}}
     <span>next &rarr;</span>
   {{/if}}

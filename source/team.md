@@ -1,6 +1,6 @@
 ---
 title: Our Team
-layout: team.html
+partial: team
 ---
 
 Some sticky content

@@ -4,26 +4,70 @@
 const
     Metalsmith  = require('metalsmith'),
     handlebars  = require('handlebars'),
-    drafts      = require('metalsmith-drafts'), // branch to archives page
+    // drafts      = require('metalsmith-drafts'), // branch to archives page
     collections = require('metalsmith-collections'),
     markdown    = require('metalsmith-markdown'),
     layouts     = require('metalsmith-layouts'),
-    nested      = require('metalsmith-nested'),
-    permalinks  = require('metalsmith-permalinks'),
+    // nested      = require('metalsmith-nested'),
+    // permalinks  = require('metalsmith-permalinks'),
     // helpers     = require('metalsmith-register-helpers'),
     less        = require('metalsmith-less');
 
 
-function maplink (){
-  return function(files, metalsmith, done) {
-    setImmediate(done);
-    Object.keys(files).forEach(file => {
-      if (files[file].path) {
-        files[file].url = files[file].path.replace(/\.md$/, '/'); // .html
-      }
-    });
-  };
-}
+Metalsmith(__dirname)
+  .source('source')
+  .destination('publish')
+  
+  .metadata({
+    site: 'Gishnanigangs Splendiferous',
+    // base: 'http://localhost:8887/gishnanigans/publish/'
+    // base: 'http://localhost:3000'
+    base: 'http://localhost'
+  })
+  
+  .use(less())
+  
+  // .use(helpers({
+  //   directory: 'assets/helpers'
+  // }))
+  
+  .use(loadYaml('data'))
+  
+  .use(markdown())
+  
+  .use(collections({
+    home: {
+      pattern: 'home/*.html'
+    },
+    help: {
+      pattern: 'help/*.html',
+      sortBy: 'weight',
+      reverse: false
+    },
+    team: {
+      pattern: 'team/*.html',
+      sortBy: 'member',
+      reverse: false
+    }
+  }))
+  
+  // .use(expose())
+  
+  .use(layouts({
+    engine: 'handlebars',
+    directory: 'assets/layouts',
+    partials: 'assets/partials',
+    default: "master.html",
+    pattern: "**/*.html"
+  }))
+  
+  .build(function(err) {
+    if (err) throw err;
+    console.log('UPLOAD-SYNC FILES HERE')
+  });
+
+
+
 
 function loadYaml (datapath) {
   const
@@ -87,12 +131,19 @@ handlebars.registerHelper('ifequals', function(val1, val2, options) {
 });
 
 
+ // echo `name` in => `value` out
+handlebars.registerHelper('echo', property => property);
+
+
 function expose() {
   return function (files, metal, done) {
     setImmediate(done);
     
+    var meta = metal.metadata();
+    console.log('META', meta)
+    
     Object.keys(files).forEach(file => {
-      if (! /md/.test(file)) return
+      if (! /html/.test(file)) return
       // console.log(file, files[file])
       // console.log('path', files[file].path, files[file].url)
       // console.log(files[file].path, files[file].collection.toString())
@@ -103,61 +154,3 @@ function expose() {
     // console.log('TEAM',files['team.md']);
   };
 }
-
-
-Metalsmith(__dirname)
-  .source('source')
-  .destination('publish')
-  
-  .metadata({
-    site: 'Gishnanigangs Splendiferous',
-    base: 'http://localhost:8887/gishnanigans/publish/'
-    // base: 'http://localhost:3000'
-  })
-  
-  .use(less())
-  
-  // .use(helpers({
-  //   directory: 'assets/helpers'
-  // }))
-  
-  .use(loadYaml('data'))
-  
-  .use(collections({
-    home: {
-      pattern: 'home/*.md'
-    },
-    help: {
-      pattern: 'help/*.md',
-      sortBy: 'weight',
-      reverse: false
-    },
-    team: {
-      pattern: 'team/*.md',
-      sortBy: 'member',
-      reverse: false
-    }
-  }))
-  
-  .use(maplink())
-  
-  .use(markdown())
-  
-  .use(nested({
-    directory: 'assets/nested',
-    generated: 'assets/layouts'
-  }))
-  
-  .use(layouts({
-    engine: 'handlebars',
-    directory: 'assets/layouts',
-    partials: 'assets/partials'
-  }))
-  
-  .use(permalinks({
-    relative: false
-  }))
-  
-  .build(function(err) {
-    if (err) throw err;
-  });
